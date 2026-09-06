@@ -114,7 +114,8 @@
       ],
       "dependencies": [
         "W1-T1",
-        "W1-T2"
+        "W1-T2",
+        "W2-T1"
       ],
       "status": "PLANNED",
       "body": "Capture enough state transitions to reconstruct what occurred.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
@@ -146,7 +147,8 @@
       ],
       "dependencies": [
         "W2-T1",
-        "W2-T2"
+        "W2-T2",
+        "W3-T1"
       ],
       "status": "PLANNED",
       "body": "Introduce stale records, interruptions, conflicting instructions and service failures.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
@@ -178,7 +180,8 @@
       ],
       "dependencies": [
         "W3-T1",
-        "W3-T2"
+        "W3-T2",
+        "W4-T1"
       ],
       "status": "PLANNED",
       "body": "Allow teams to model policies with synthetic or explicitly approved data.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
@@ -210,7 +213,8 @@
       ],
       "dependencies": [
         "W4-T1",
-        "W4-T2"
+        "W4-T2",
+        "W5-T1"
       ],
       "status": "PLANNED",
       "body": "Create held-out variations and evaluate transfer across policy changes.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
@@ -242,7 +246,8 @@
       ],
       "dependencies": [
         "W5-T1",
-        "W5-T2"
+        "W5-T2",
+        "W6-T1"
       ],
       "status": "PLANNED",
       "body": "Measure runtime cost, reset reliability and module maintenance effort.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."

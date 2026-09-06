@@ -152,7 +152,7 @@ Exact functional commands, fixtures and paths must be ratified in the execution 
 
 ## W2-T2 — Implement reset and event replay
 
-**Wave:** W2 · **Prerequisites:** W1-T1, W1-T2
+**Wave:** W2 · **Prerequisites:** W1-T1, W1-T2, W2-T1
 
 Capture enough state transitions to reconstruct what occurred.
 
@@ -248,7 +248,7 @@ Exact functional commands, fixtures and paths must be ratified in the execution 
 
 ## W3-T2 — Add controlled fault injection
 
-**Wave:** W3 · **Prerequisites:** W2-T1, W2-T2
+**Wave:** W3 · **Prerequisites:** W2-T1, W2-T2, W3-T1
 
 Introduce stale records, interruptions, conflicting instructions and service failures.
 
@@ -344,7 +344,7 @@ Exact functional commands, fixtures and paths must be ratified in the execution 
 
 ## W4-T2 — Build private world authoring
 
-**Wave:** W4 · **Prerequisites:** W3-T1, W3-T2
+**Wave:** W4 · **Prerequisites:** W3-T1, W3-T2, W4-T1
 
 Allow teams to model policies with synthetic or explicitly approved data.
 
@@ -440,7 +440,7 @@ Exact functional commands, fixtures and paths must be ratified in the execution 
 
 ## W5-T2 — Test unseen scenario variations
 
-**Wave:** W5 · **Prerequisites:** W4-T1, W4-T2
+**Wave:** W5 · **Prerequisites:** W4-T1, W4-T2, W5-T1
 
 Create held-out variations and evaluate transfer across policy changes.
 
@@ -536,7 +536,7 @@ Exact functional commands, fixtures and paths must be ratified in the execution 
 
 ## W6-T2 — Publish world maintenance and cost guidance
 
-**Wave:** W6 · **Prerequisites:** W5-T1, W5-T2
+**Wave:** W6 · **Prerequisites:** W5-T1, W5-T2, W6-T1
 
 Measure runtime cost, reset reliability and module maintenance effort.
 
