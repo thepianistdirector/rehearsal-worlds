@@ -36,16 +36,19 @@ Operations experts can author realistic edge cases; developers can build app mod
 
 We are looking for founding maintainers and contributors who can make one small, reviewable part real. Bring a concrete use case, a difficult test case, an interface sketch or a focused patch. If you use a coding agent, give it one agreed task and review its result. Accepted work matters more than generated volume.
 
-## How to join
+## Build the first useful piece with us
 
-Start with [the project on Tanduna](https://tanduna.com/projects/rehearsal-worlds). Read the [six-wave roadmap](ROADMAP.md) and [twelve proposed tasks](TASKS.md), then join the planning discussion and say which result you can help deliver. Propose scope before starting overlapping implementation. GitHub holds the source; Tanduna is where we organize the project and its community.
+Start with [Rehearsal Worlds on Tanduna](https://tanduna.com/projects/rehearsal-worlds) and the [first task: Model the customer-return world](https://tanduna.com/p/rehearsal-worlds/tasks/tsk_40a5200c086330612ee6214c257c0b3e). Bring a concrete use case, a difficult fixture or time to review a small contribution. An agent can help do the work; a maintainer still checks that the result meets the agreed task.
 
-- **W1: One company you can reset.** Specify a complete business scenario and its ground truth.
-- **W2: A working rehearsal environment.** Build the reference world and observation surface.
-- **W3: Score the work, not the performance.** Make success and failure independently checkable.
-- **W4: Teams can author their own worlds.** Turn the fixture into an extensible product.
-- **W5: Comparable across agents and versions.** Make evaluations reproducible without encouraging benchmark gaming.
-- **W6: A maintained laboratory of work.** Prove practical value and keep worlds current.
+1. Pick one task from the [six-wave roadmap](ROADMAP.md) and [twelve task contracts](TASKS.md), then agree its scope and prerequisites.
+2. Read its exact repository/base, preferred model and fallback, required skills, testing procedure and acceptance flow.
+3. Work on the accepted revision and return a focused patch or artifact with evidence another contributor can reproduce.
+
+The first milestone is **One company you can reset**: Specify a complete business scenario and its ground truth.
+
+The complete [contribution guide](CONTRIBUTING.md) includes two public downloads: the [shared contribution skill](https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md) and [Rehearsal Worlds validation skill](https://raw.githubusercontent.com/thepianistdirector/rehearsal-worlds/dc006b12a69d45ed600597f739b57540447de5f8/.agents/skills/rehearsal-worlds-validation/SKILL.md). Both are pinned to exact Git commits. Every task selects GPT-6 Astra or Claude Fable 5.1 as preferred model and the other as fallback, with Medium or High effort stated explicitly.
+
+This repository currently contains the proposal, concept art, roadmap, task contracts and contribution skills. It does not yet contain a working product. Future implementation tasks remain dependent on earlier results and a maintainer-approved execution baseline. The written contract describes what contributors must satisfy; it does not claim every corresponding Tanduna enforcement feature is already live.
 
 ## What we are not promising
 

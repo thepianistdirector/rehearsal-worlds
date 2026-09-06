@@ -1,0 +1,723 @@
+{
+  "project": "rehearsal-worlds",
+  "schema": "maintainer-authored-contract-v1",
+  "platformEnforcement": "Not claimed by this document; verify the current Tanduna task revision and production capabilities.",
+  "tasks": [
+    {
+      "taskKey": "W1-T1",
+      "taskId": "tsk_40a5200c086330612ee6214c257c0b3e",
+      "taskUrl": "https://tanduna.com/p/rehearsal-worlds/tasks/tsk_40a5200c086330612ee6214c257c0b3e",
+      "title": "Model the customer-return world",
+      "repositoryUrl": "https://github.com/thepianistdirector/rehearsal-worlds",
+      "baseBranch": "main",
+      "planningBaseCommit": "dc006b12a69d45ed600597f739b57540447de5f8",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Maintainer accepts the scoped design protocol; this is not product implementation.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "medium"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "medium"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "rehearsal-worlds-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/rehearsal-worlds/dc006b12a69d45ed600597f739b57540447de5f8/.agents/skills/rehearsal-worlds-validation/SKILL.md",
+          "version": "dc006b12a69d45ed600597f739b57540447de5f8"
+        }
+      ],
+      "acceptanceCriteria": [
+        "The scenario includes an ordinary return, an ineligible return and an ambiguous policy case.",
+        "Expected outcomes describe application state and permissions, not exact agent wording."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "manual-protocol",
+        "procedure": "Trace one customer return across support, order and inventory records. Define the successful terminal state, a plausible incorrect state and an incomplete state using source records instead of agent narration.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check dc006b12a69d45ed600597f739b57540447de5f8"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": null,
+        "evidenceLocation": "docs/work/W1-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W1-T2",
+      "taskId": "tsk_a49b8fa64275c81d80e2b1e47d07e3e2",
+      "taskUrl": "https://tanduna.com/p/rehearsal-worlds/tasks/tsk_a49b8fa64275c81d80e2b1e47d07e3e2",
+      "title": "Define repeatable world reset",
+      "repositoryUrl": "https://github.com/thepianistdirector/rehearsal-worlds",
+      "baseBranch": "main",
+      "planningBaseCommit": "dc006b12a69d45ed600597f739b57540447de5f8",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "rehearsal-worlds-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/rehearsal-worlds/dc006b12a69d45ed600597f739b57540447de5f8/.agents/skills/rehearsal-worlds-validation/SKILL.md",
+          "version": "dc006b12a69d45ed600597f739b57540447de5f8"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Two resets with the same version and seed produce equivalent starting conditions.",
+        "No real customer data or live external delivery is required."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "manual-protocol",
+        "procedure": "Specify a seed, initial records and event order, reset twice and compare expected world state. Include pending events and a failed prior attempt in the reset contract; identify nondeterministic boundaries.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check dc006b12a69d45ed600597f739b57540447de5f8"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": null,
+        "evidenceLocation": "docs/work/W1-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W1-T1"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W2-T1",
+      "taskId": "tsk_0e255aa07580a378923efec11334b021",
+      "taskUrl": "https://tanduna.com/p/rehearsal-worlds/tasks/tsk_0e255aa07580a378923efec11334b021",
+      "title": "Implement the three application modules",
+      "repositoryUrl": "https://github.com/thepianistdirector/rehearsal-worlds",
+      "baseBranch": "main",
+      "planningBaseCommit": "dc006b12a69d45ed600597f739b57540447de5f8",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "rehearsal-worlds-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/rehearsal-worlds/dc006b12a69d45ed600597f739b57540447de5f8/.agents/skills/rehearsal-worlds-validation/SKILL.md",
+          "version": "dc006b12a69d45ed600597f739b57540447de5f8"
+        }
+      ],
+      "acceptanceCriteria": [
+        "A person can complete the full return workflow through the same surfaces available to the agent.",
+        "Unauthorized actions fail in both interface and API paths."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Run a return through the three application modules and inspect each source record. Submit a missing-order reference and conflicting inventory action; verify consistent errors and unchanged unrelated records.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check dc006b12a69d45ed600597f739b57540447de5f8"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W2-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W1-T1",
+        "W1-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W2-T2",
+      "taskId": "tsk_39c00ac768889da8c4512a886460e76d",
+      "taskUrl": "https://tanduna.com/p/rehearsal-worlds/tasks/tsk_39c00ac768889da8c4512a886460e76d",
+      "title": "Implement reset and event replay",
+      "repositoryUrl": "https://github.com/thepianistdirector/rehearsal-worlds",
+      "baseBranch": "main",
+      "planningBaseCommit": "dc006b12a69d45ed600597f739b57540447de5f8",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "rehearsal-worlds-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/rehearsal-worlds/dc006b12a69d45ed600597f739b57540447de5f8/.agents/skills/rehearsal-worlds-validation/SKILL.md",
+          "version": "dc006b12a69d45ed600597f739b57540447de5f8"
+        }
+      ],
+      "acceptanceCriteria": [
+        "A run can be reset and its consequential events replayed in order.",
+        "A failed run does not contaminate the next scenario."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Replay one recorded event stream twice from a reset world and compare task-relevant state. Interrupt replay, recover and repeat; record world version, seed and any intentionally variable fields.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check dc006b12a69d45ed600597f739b57540447de5f8"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W2-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W1-T1",
+        "W1-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W3-T1",
+      "taskId": "tsk_c497eb7eb21257adfd700b1e3040c091",
+      "taskUrl": "https://tanduna.com/p/rehearsal-worlds/tasks/tsk_c497eb7eb21257adfd700b1e3040c091",
+      "title": "Build outcome evaluators",
+      "repositoryUrl": "https://github.com/thepianistdirector/rehearsal-worlds",
+      "baseBranch": "main",
+      "planningBaseCommit": "dc006b12a69d45ed600597f739b57540447de5f8",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "rehearsal-worlds-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/rehearsal-worlds/dc006b12a69d45ed600597f739b57540447de5f8/.agents/skills/rehearsal-worlds-validation/SKILL.md",
+          "version": "dc006b12a69d45ed600597f739b57540447de5f8"
+        }
+      ],
+      "acceptanceCriteria": [
+        "A persuasive but incorrect agent answer fails the outcome check.",
+        "Intentionally duplicated returns and unauthorized changes are detected."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Evaluate successful, plausible-wrong and incomplete traces against actual world state. Modify a wrong trace to claim success and confirm the evaluator still rejects it without exposing hidden answers to the agent.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check dc006b12a69d45ed600597f739b57540447de5f8"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W3-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W2-T1",
+        "W2-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W3-T2",
+      "taskId": "tsk_e3c99c050ae88241894accc9740f0e2f",
+      "taskUrl": "https://tanduna.com/p/rehearsal-worlds/tasks/tsk_e3c99c050ae88241894accc9740f0e2f",
+      "title": "Add controlled fault injection",
+      "repositoryUrl": "https://github.com/thepianistdirector/rehearsal-worlds",
+      "baseBranch": "main",
+      "planningBaseCommit": "dc006b12a69d45ed600597f739b57540447de5f8",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "rehearsal-worlds-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/rehearsal-worlds/dc006b12a69d45ed600597f739b57540447de5f8/.agents/skills/rehearsal-worlds-validation/SKILL.md",
+          "version": "dc006b12a69d45ed600597f739b57540447de5f8"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Each failure is reproducible and has an explicit expected safe outcome.",
+        "Reports distinguish agent errors, environment errors and unsupported cases."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Inject each declared fault at a fixed event boundary and retain its schedule. Repeat with the same seed, then change only the fault; compare resulting state and ensure recovery does not erase the failure.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check dc006b12a69d45ed600597f739b57540447de5f8"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W3-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W2-T1",
+        "W2-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W4-T1",
+      "taskId": "tsk_18245e258e899590516f7b5b5fa4456f",
+      "taskUrl": "https://tanduna.com/p/rehearsal-worlds/tasks/tsk_18245e258e899590516f7b5b5fa4456f",
+      "title": "Publish a scenario and app module kit",
+      "repositoryUrl": "https://github.com/thepianistdirector/rehearsal-worlds",
+      "baseBranch": "main",
+      "planningBaseCommit": "dc006b12a69d45ed600597f739b57540447de5f8",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "rehearsal-worlds-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/rehearsal-worlds/dc006b12a69d45ed600597f739b57540447de5f8/.agents/skills/rehearsal-worlds-validation/SKILL.md",
+          "version": "dc006b12a69d45ed600597f739b57540447de5f8"
+        }
+      ],
+      "acceptanceCriteria": [
+        "A contributor builds a second scenario without editing the runner core.",
+        "Malformed modules fail validation before execution."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Have a second author add a scenario and module using the kit. Run valid and malformed packages in a fresh world; verify version errors and expected outcomes remain inspectable.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check dc006b12a69d45ed600597f739b57540447de5f8"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W4-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W3-T1",
+        "W3-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W4-T2",
+      "taskId": "tsk_7285183aaf92cc2743578089cbe2fb93",
+      "taskUrl": "https://tanduna.com/p/rehearsal-worlds/tasks/tsk_7285183aaf92cc2743578089cbe2fb93",
+      "title": "Build private world authoring",
+      "repositoryUrl": "https://github.com/thepianistdirector/rehearsal-worlds",
+      "baseBranch": "main",
+      "planningBaseCommit": "dc006b12a69d45ed600597f739b57540447de5f8",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "rehearsal-worlds-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/rehearsal-worlds/dc006b12a69d45ed600597f739b57540447de5f8/.agents/skills/rehearsal-worlds-validation/SKILL.md",
+          "version": "dc006b12a69d45ed600597f739b57540447de5f8"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Exports identify data provenance and do not include private data by default.",
+        "Access controls separate world authors, evaluators and agent runs."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Author a synthetic private-world package from approved inputs, export and reopen locally. Inspect the data boundary and verify no private records are required in the public example or accidentally included in export.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check dc006b12a69d45ed600597f739b57540447de5f8"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W4-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W3-T1",
+        "W3-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W5-T1",
+      "taskId": "tsk_e34f26f0c581576d30cfacffe709d1d7",
+      "taskUrl": "https://tanduna.com/p/rehearsal-worlds/tasks/tsk_e34f26f0c581576d30cfacffe709d1d7",
+      "title": "Connect two agent runners",
+      "repositoryUrl": "https://github.com/thepianistdirector/rehearsal-worlds",
+      "baseBranch": "main",
+      "planningBaseCommit": "dc006b12a69d45ed600597f739b57540447de5f8",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "rehearsal-worlds-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/rehearsal-worlds/dc006b12a69d45ed600597f739b57540447de5f8/.agents/skills/rehearsal-worlds-validation/SKILL.md",
+          "version": "dc006b12a69d45ed600597f739b57540447de5f8"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Both runners operate against the same scenario and evaluator contract.",
+        "Reports disclose retries and incomplete runs rather than hiding them."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Connect two distinct agent runners to the same world interface and compare action visibility and outcomes. Test cancellation and a runner that reports success without achieving the objective.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check dc006b12a69d45ed600597f739b57540447de5f8"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W5-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W4-T1",
+        "W4-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W5-T2",
+      "taskId": "tsk_497369dafc83371f1c6cc3fd441f86cd",
+      "taskUrl": "https://tanduna.com/p/rehearsal-worlds/tasks/tsk_497369dafc83371f1c6cc3fd441f86cd",
+      "title": "Test unseen scenario variations",
+      "repositoryUrl": "https://github.com/thepianistdirector/rehearsal-worlds",
+      "baseBranch": "main",
+      "planningBaseCommit": "dc006b12a69d45ed600597f739b57540447de5f8",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "rehearsal-worlds-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/rehearsal-worlds/dc006b12a69d45ed600597f739b57540447de5f8/.agents/skills/rehearsal-worlds-validation/SKILL.md",
+          "version": "dc006b12a69d45ed600597f739b57540447de5f8"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Public examples and held-out evaluation cases remain distinct.",
+        "A benchmark-specific shortcut fails a deliberately varied scenario."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Keep an unseen variation set separate from authoring examples. Run the evaluator on held-out cases and record per-case outcomes, including wrong but persuasive traces; document leakage checks and limitations.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check dc006b12a69d45ed600597f739b57540447de5f8"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W5-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W4-T1",
+        "W4-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W6-T1",
+      "taskId": "tsk_9bf5d8475fc6654fba8bb0cf39faba2a",
+      "taskUrl": "https://tanduna.com/p/rehearsal-worlds/tasks/tsk_9bf5d8475fc6654fba8bb0cf39faba2a",
+      "title": "Pilot continuous workflow regression",
+      "repositoryUrl": "https://github.com/thepianistdirector/rehearsal-worlds",
+      "baseBranch": "main",
+      "planningBaseCommit": "dc006b12a69d45ed600597f739b57540447de5f8",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "rehearsal-worlds-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/rehearsal-worlds/dc006b12a69d45ed600597f739b57540447de5f8/.agents/skills/rehearsal-worlds-validation/SKILL.md",
+          "version": "dc006b12a69d45ed600597f739b57540447de5f8"
+        }
+      ],
+      "acceptanceCriteria": [
+        "A known regression is caught before a real workflow is enabled.",
+        "The team can trace a failure to a scenario, environment version and resulting state."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Run a workflow regression before and after an intentional behavior change. Show the failure, retained trace and reproducible reset; ask a pilot maintainer to diagnose it using only the published report.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check dc006b12a69d45ed600597f739b57540447de5f8"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W6-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W5-T1",
+        "W5-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W6-T2",
+      "taskId": "tsk_60fae9c3b49727b53f1e2ab1e3630084",
+      "taskUrl": "https://tanduna.com/p/rehearsal-worlds/tasks/tsk_60fae9c3b49727b53f1e2ab1e3630084",
+      "title": "Publish world maintenance and cost guidance",
+      "repositoryUrl": "https://github.com/thepianistdirector/rehearsal-worlds",
+      "baseBranch": "main",
+      "planningBaseCommit": "dc006b12a69d45ed600597f739b57540447de5f8",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "rehearsal-worlds-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/rehearsal-worlds/dc006b12a69d45ed600597f739b57540447de5f8/.agents/skills/rehearsal-worlds-validation/SKILL.md",
+          "version": "dc006b12a69d45ed600597f739b57540447de5f8"
+        }
+      ],
+      "acceptanceCriteria": [
+        "An independent operator reproduces a published evaluation.",
+        "Supported scope and simulation-to-reality limitations are visible beside results."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Have a second operator install, version, reset and retire a world package. Measure execution/storage cost for a fixed workload and document update compatibility, failed runs and unsupported real-world claims.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check dc006b12a69d45ed600597f739b57540447de5f8"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W6-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W5-T1",
+        "W5-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    }
+  ]
+}
