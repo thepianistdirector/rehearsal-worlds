@@ -1,0 +1,251 @@
+{
+  "name": "Rehearsal Worlds",
+  "slug": "rehearsal-worlds",
+  "stage": "Planning only — no product implementation",
+  "waves": [
+    {
+      "id": "W1",
+      "title": "One company you can reset",
+      "outcome": "Specify a complete business scenario and its ground truth.",
+      "taskIds": [
+        "W1-T1",
+        "W1-T2"
+      ]
+    },
+    {
+      "id": "W2",
+      "title": "A working rehearsal environment",
+      "outcome": "Build the reference world and observation surface.",
+      "taskIds": [
+        "W2-T1",
+        "W2-T2"
+      ]
+    },
+    {
+      "id": "W3",
+      "title": "Score the work, not the performance",
+      "outcome": "Make success and failure independently checkable.",
+      "taskIds": [
+        "W3-T1",
+        "W3-T2"
+      ]
+    },
+    {
+      "id": "W4",
+      "title": "Teams can author their own worlds",
+      "outcome": "Turn the fixture into an extensible product.",
+      "taskIds": [
+        "W4-T1",
+        "W4-T2"
+      ]
+    },
+    {
+      "id": "W5",
+      "title": "Comparable across agents and versions",
+      "outcome": "Make evaluations reproducible without encouraging benchmark gaming.",
+      "taskIds": [
+        "W5-T1",
+        "W5-T2"
+      ]
+    },
+    {
+      "id": "W6",
+      "title": "A maintained laboratory of work",
+      "outcome": "Prove practical value and keep worlds current.",
+      "taskIds": [
+        "W6-T1",
+        "W6-T2"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "W1-T1",
+      "wave": "W1",
+      "title": "Model the customer-return world",
+      "goal": "Define support, inventory, order records, roles and allowed outcomes using synthetic data.",
+      "acceptanceCriteria": [
+        "The scenario includes an ordinary return, an ineligible return and an ambiguous policy case.",
+        "Expected outcomes describe application state and permissions, not exact agent wording."
+      ],
+      "dependencies": [],
+      "status": "PLANNED",
+      "body": "Define support, inventory, order records, roles and allowed outcomes using synthetic data.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W1-T2",
+      "wave": "W1",
+      "title": "Define repeatable world reset",
+      "goal": "Specify seeds, clocks, identities and initialization boundaries.",
+      "acceptanceCriteria": [
+        "Two resets with the same version and seed produce equivalent starting conditions.",
+        "No real customer data or live external delivery is required."
+      ],
+      "dependencies": [
+        "W1-T1"
+      ],
+      "status": "PLANNED",
+      "body": "Specify seeds, clocks, identities and initialization boundaries.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W2-T1",
+      "wave": "W2",
+      "title": "Implement the three application modules",
+      "goal": "Create usable synthetic support, stock and order interfaces and APIs.",
+      "acceptanceCriteria": [
+        "A person can complete the full return workflow through the same surfaces available to the agent.",
+        "Unauthorized actions fail in both interface and API paths."
+      ],
+      "dependencies": [
+        "W1-T1",
+        "W1-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Create usable synthetic support, stock and order interfaces and APIs.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W2-T2",
+      "wave": "W2",
+      "title": "Implement reset and event replay",
+      "goal": "Capture enough state transitions to reconstruct what occurred.",
+      "acceptanceCriteria": [
+        "A run can be reset and its consequential events replayed in order.",
+        "A failed run does not contaminate the next scenario."
+      ],
+      "dependencies": [
+        "W1-T1",
+        "W1-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Capture enough state transitions to reconstruct what occurred.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W3-T1",
+      "wave": "W3",
+      "title": "Build outcome evaluators",
+      "goal": "Check final state, authorization, duplicate effects and incomplete work.",
+      "acceptanceCriteria": [
+        "A persuasive but incorrect agent answer fails the outcome check.",
+        "Intentionally duplicated returns and unauthorized changes are detected."
+      ],
+      "dependencies": [
+        "W2-T1",
+        "W2-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Check final state, authorization, duplicate effects and incomplete work.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W3-T2",
+      "wave": "W3",
+      "title": "Add controlled fault injection",
+      "goal": "Introduce stale records, interruptions, conflicting instructions and service failures.",
+      "acceptanceCriteria": [
+        "Each failure is reproducible and has an explicit expected safe outcome.",
+        "Reports distinguish agent errors, environment errors and unsupported cases."
+      ],
+      "dependencies": [
+        "W2-T1",
+        "W2-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Introduce stale records, interruptions, conflicting instructions and service failures.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W4-T1",
+      "wave": "W4",
+      "title": "Publish a scenario and app module kit",
+      "goal": "Document state models, interfaces, seed data and evaluator extensions.",
+      "acceptanceCriteria": [
+        "A contributor builds a second scenario without editing the runner core.",
+        "Malformed modules fail validation before execution."
+      ],
+      "dependencies": [
+        "W3-T1",
+        "W3-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Document state models, interfaces, seed data and evaluator extensions.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W4-T2",
+      "wave": "W4",
+      "title": "Build private world authoring",
+      "goal": "Allow teams to model policies with synthetic or explicitly approved data.",
+      "acceptanceCriteria": [
+        "Exports identify data provenance and do not include private data by default.",
+        "Access controls separate world authors, evaluators and agent runs."
+      ],
+      "dependencies": [
+        "W3-T1",
+        "W3-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Allow teams to model policies with synthetic or explicitly approved data.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W5-T1",
+      "wave": "W5",
+      "title": "Connect two agent runners",
+      "goal": "Record budgets, tool access, environment versions and run conditions.",
+      "acceptanceCriteria": [
+        "Both runners operate against the same scenario and evaluator contract.",
+        "Reports disclose retries and incomplete runs rather than hiding them."
+      ],
+      "dependencies": [
+        "W4-T1",
+        "W4-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Record budgets, tool access, environment versions and run conditions.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W5-T2",
+      "wave": "W5",
+      "title": "Test unseen scenario variations",
+      "goal": "Create held-out variations and evaluate transfer across policy changes.",
+      "acceptanceCriteria": [
+        "Public examples and held-out evaluation cases remain distinct.",
+        "A benchmark-specific shortcut fails a deliberately varied scenario."
+      ],
+      "dependencies": [
+        "W4-T1",
+        "W4-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Create held-out variations and evaluate transfer across policy changes.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W6-T1",
+      "wave": "W6",
+      "title": "Pilot continuous workflow regression",
+      "goal": "Run a consented team's agent against versioned scenarios after changes.",
+      "acceptanceCriteria": [
+        "A known regression is caught before a real workflow is enabled.",
+        "The team can trace a failure to a scenario, environment version and resulting state."
+      ],
+      "dependencies": [
+        "W5-T1",
+        "W5-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Run a consented team's agent against versioned scenarios after changes.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W6-T2",
+      "wave": "W6",
+      "title": "Publish world maintenance and cost guidance",
+      "goal": "Measure runtime cost, reset reliability and module maintenance effort.",
+      "acceptanceCriteria": [
+        "An independent operator reproduces a published evaluation.",
+        "Supported scope and simulation-to-reality limitations are visible beside results."
+      ],
+      "dependencies": [
+        "W5-T1",
+        "W5-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Measure runtime cost, reset reliability and module maintenance effort.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    }
+  ]
+}
